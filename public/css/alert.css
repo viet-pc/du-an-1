@@ -1,0 +1,133 @@
+/* alert admin */
+
+#alert {
+    position: fixed;
+    top: 12px;
+    right: 50%;
+    transform: translate(50%);
+    transition: all linear 0.3s;
+    z-index: 1000000;
+    border-radius: 3px;
+    border: 1px solid #d9d9d9;
+}
+
+#alert .btn {
+    margin: 0 0.5rem;
+}
+
+.success .content-alert {
+
+    border-left: 4px solid #47d864;
+}
+
+.danger .content-alert {
+    border-left: 4px solid #570101;
+}
+
+#alert .content-alert {
+    display: flex;
+    align-items: center;
+    justify-content:space-around;
+    background: white;
+    border-radius: 3px;
+    padding: 15px 5px;
+    position: relative;
+    /* calc(100% - 32px) */
+}
+
+#alert,
+.content-alert {
+    animation: slide ease 0.3s, fade linear 1s 12s forwards;
+}
+
+#alert #ease {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #e0e0e0;
+    border: 10px;
+    height: 10px;
+    animation: width ease 15s infinite;
+}
+
+@keyframes slide {
+    from {
+        opacity: 0;
+        transform: translatey(-100%);
+    }
+    to {
+        opacity: 1;
+        transform: translatey(0);
+    }
+}
+
+@keyframes width {
+    from {
+        width: 100%;
+    }
+    to {
+        width: 0;
+    }
+}
+
+@keyframes fade {
+    to {
+        opacity: 0;
+    }
+}
+
+#alert .fa-exclamation-triangle,
+#alert .fa-check-circle {
+    font-size: 27px;
+    padding: 0 5px;
+}
+
+#alert .fa-check-circle {
+    color: #47d864;
+}
+
+#alert .fa-exclamation-triangle {
+    color: #9a072c;
+}
+
+#alert .fa-times-circle {
+    font-size: 20px;
+    color: rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+}
+
+#alert .fa-times-circle:hover {
+    color: rgb(134, 134, 134);
+}
+
+#alert .fa-check-circle,
+#alert .fa-times-circle {
+    padding: 0 5px;
+}
+#alert .text{
+    padding: 0 5px 16px;
+}
+#alert .title {
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+    margin: 0;
+    text-transform: uppercase;
+
+}
+
+#alert #btn-ok {
+    margin: 0 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    font-size: 1.6em;
+    cursor: pointer;
+}
